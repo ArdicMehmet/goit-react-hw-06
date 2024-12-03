@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import styles from "./contactForm.module.css";
 import { addContact } from "../../redux/contactsSlice";
 import { useDispatch } from "react-redux";
-const ContactForm = ({ handleClick }) => {
+const ContactForm = () => {
   const dispatch = useDispatch();
   return (
     <Formik
