@@ -7,10 +7,10 @@ const ContactList = () => {
   const contacts = useSelector((state) => state.contacts);
   const filter = useSelector((state) => state.filters.name);
   const filteredContacts = useMemo(() => {
-    console.log("Memo çalıştı, filter :", filter);
-
     return contacts
-      ? contacts["items"].filter((contact) => contact.name.includes(filter))
+      ? contacts["items"].filter((contact) =>
+          contact.name.toLowerCase().includes(filter.toLowerCase())
+        )
       : [];
   }, [contacts, filter]);
   const dispatch = useDispatch();

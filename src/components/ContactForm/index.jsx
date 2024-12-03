@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { nanoid } from "nanoid";
 import styles from "./contactForm.module.css";
 import { addContact } from "../../redux/contactsSlice";
 import { useDispatch } from "react-redux";
@@ -21,11 +20,6 @@ const ContactForm = ({ handleClick }) => {
           .required("Required"),
       })}
       onSubmit={(values, { setSubmitting, resetForm }) => {
-        // handleClick({
-        //   id: `${nanoid()}`,
-        //   name: values.name,
-        //   number: values.number,
-        // });
         dispatch(
           addContact({
             id: `${crypto.randomUUID()}`,
